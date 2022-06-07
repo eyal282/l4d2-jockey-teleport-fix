@@ -4,6 +4,12 @@
 #include <sdktools>
 #include <sourcemod>
 
+#undef REQUIRE_PLUGIN
+#undef REQUIRE_EXTENSIONS
+#tryinclude < updater>    // Comment out this line to remove updater support by force.
+#define REQUIRE_PLUGIN
+#define REQUIRE_EXTENSIONS
+
 #define UPDATE_URL "https://raw.githubusercontent.com/eyal282/l4d2-jockey-teleport-fix/master/addons/sourcemod/updatefile.txt"
 
 #define HAMMER_WORLD_EDITOR_CENTER view_as<float>({ 0.0, 0.0, 0.0 })
@@ -22,6 +28,23 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	HookEvent("jockey_ride", Event_JockeyRide, EventHookMode_Post);
+
+#if defined _updater_included
+	if (LibraryExists("updater"))
+	{
+		Updater_AddPlugin(UPDATE_URL);
+	}
+#endif
+}
+
+public void OnLibraryAdded(const char[] name)
+{
+#if defined _updater_included
+	if (StrEqual(name, "updater"))
+	{
+		Updater_AddPlugin(UPDATE_URL);
+	}
+#endif
 }
 
 public void OnGameFrame()
