@@ -1,4 +1,3 @@
-#include <colors>
 #include <left4dhooks>
 #include <sdkhooks>
 #include <sdktools>
@@ -12,8 +11,6 @@
 
 #define UPDATE_URL "https://raw.githubusercontent.com/eyal282/l4d2-jockey-teleport-fix/master/addons/sourcemod/updatefile.txt"
 
-#define HAMMER_WORLD_EDITOR_CENTER view_as<float>({ 0.0, 0.0, 0.0 })
-
 float g_fLastOrigin[MAXPLAYERS + 1][3];
 
 public Plugin myinfo =
@@ -21,7 +18,7 @@ public Plugin myinfo =
 	name        = "Jockey Teleport Fix",
 	author      = "Eyal282",
 	description = "Detects teleportation while jockeyed and teleports back to last known position afterwards..",
-	version     = "1.0",
+	version     = "1.1",
 	url         = "None."
 };
 
