@@ -1,0 +1,16 @@
+"Information"
+{
+	"Version"
+	{
+		"Latest"	"1.0"
+	}
+	
+	"Notes"	"Plugin release"
+}
+	
+"Files"
+{
+	"Plugin"	"Path_SM/plugins/l4d2_jockey_teleport_fix.smx"
+	
+	"Source"	"Path_SM/scripting/l4d2_jockey_teleport_fix.sp"
+}
