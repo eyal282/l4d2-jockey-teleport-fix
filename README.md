@@ -1,5 +1,4 @@
 # l4d2-jockey-teleport-fix
 l4d2-jockey-teleport-fix
 
-
-Note to self: add Alliedmods link.
+This plugin does not work.
